@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+Results
+{% endblock %}
+
+{% block body %}
+    <h2>Results</h2>
+    <ul class="list-group list-group-flush mt-5">
+        {% for result in results %}
+        <li class="list-group-item">
+                <a href="{% url 'show_entry' result %}">{{ result }}</a>
+            </li>
+        {% empty %}
+            <h4 class="text-muted">No results</h4>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

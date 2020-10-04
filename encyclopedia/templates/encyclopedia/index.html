@@ -1,0 +1,14 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}Wiki{% endblock %}
+
+{% block body %}
+    <h2>All Pages</h2>
+    <ul class="list-group list-group-flush mt-5">
+        {% for entry in entries %}
+            <li class="list-group-item" id="index">
+                <a href="{% url 'show_entry' entry %}">{{ entry }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
